@@ -21,7 +21,7 @@ services:
       - HYP_REST_ENDPOINT=http://vp0:7050
     ports:
       - "9090:9090"
- 
+
   membersrvc0:
     extends:
       file: membersrvc.yml
@@ -46,7 +46,6 @@ services:
       - CORE_SECURITY_ENROLLID=test_vp0
       - CORE_SECURITY_ENROLLSECRET=MwYpmSRjupbT
     ports:
-      - "80:80"
       - "7050:7050"
       - "7051:7051"
     links:
@@ -85,31 +84,18 @@ services:
 
   vp3:
     extends:
-      file: nodejs.yml
+      file: peer.yml
       service: vp_sec
     hostname: vp3
-    volumes:
-      # tweak this to map a local developmnt directory tree into the container
-      - ~/mytest:/user/mytest
     environment:
       - CORE_PEER_ID=vp3
       - CORE_PEER_DISCOVERY_ROOTNODE=vp0:7051
       - CORE_SECURITY_ENROLLID=test_vp3
       - CORE_SECURITY_ENROLLSECRET=9LKqKH5peurL
-      - MEMBERSRVC_ADDRESS=membersrvc:7054
-      - PEER_ADDRESS=peer:7051
-      - KEY_VALUE_STORE=/tmp/hl_sdk_node_key_value_store
-      - DEPLOY_MODE=dev
-      - CORE_CHAINCODE_ID_NAME=mycc
-      - CORE_PEER_ADDRESS=peer:7051
     links:
       - vp0
       - membersrvc0
     command: sh -c "sleep 10; peer node start"
-    stdin_open: true
-    tty: true
-    ports:
-      - "1337:1337"
 
 #networks:
 #  default:
