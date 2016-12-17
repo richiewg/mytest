@@ -21,30 +21,6 @@ services:
       - HYP_REST_ENDPOINT=http://vp0:7050
     ports:
       - "9090:9090"
-
-  starter:
-    container_name: starter
-    image: hyperledger/fabric-starter-kit
-    volumes:
-      # tweak this to map a local developmnt directory tree into the container
-      - ~/mytest:/user/mytest
-    environment:
-      - MEMBERSRVC_ADDRESS=membersrvc:7054
-      - PEER_ADDRESS=peer:7051
-      - KEY_VALUE_STORE=/tmp/hl_sdk_node_key_value_store
-    # set to following to 'dev' if peer running in Developer mode
-      - DEPLOY_MODE=dev
-      - CORE_CHAINCODE_ID_NAME=mycc
-      - CORE_PEER_ADDRESS=peer:7051
-    # the following command will start the chain code when this container starts and ready it for deployment by the app
-    command: sh -c "sleep 20; /opt/gopath/src/github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02/chaincode_example02"
-    stdin_open: true
-    tty: true
-    links:
-    - membersrvc
-    - peer
-    ports:
-      - "80:80"
  
   membersrvc0:
     extends:
@@ -122,6 +98,29 @@ services:
       - membersrvc0
     command: sh -c "sleep 10; peer node start"
 
+  starter:
+    container_name: starter
+    image: hyperledger/fabric-starter-kit
+    volumes:
+      # tweak this to map a local developmnt directory tree into the container
+      - ~/mytest:/user/mytest
+    environment:
+      - MEMBERSRVC_ADDRESS=membersrvc:7054
+      - PEER_ADDRESS=peer:7051
+      - KEY_VALUE_STORE=/tmp/hl_sdk_node_key_value_store
+    # set to following to 'dev' if peer running in Developer mode
+      - DEPLOY_MODE=dev
+      - CORE_CHAINCODE_ID_NAME=mycc
+      - CORE_PEER_ADDRESS=peer:7051
+    # the following command will start the chain code when this container starts and ready it for deployment by the app
+    command: sh -c "sleep 20; /opt/gopath/src/github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02/chaincode_example02"
+    stdin_open: true
+    tty: true
+    links:
+      - vp0
+      - membersrvc0
+    ports:
+      - "80:80"
 #networks:
 #  default:
 #    external:
