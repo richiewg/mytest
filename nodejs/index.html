@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>main</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<div id="div1" style="width: 550px;">
+    </br>
+    </br>
+    <form id="form1" method="post" action="a" >
+        <fieldset>
+            <legend>甲方->乙方转账</legend>
+            转出方:<select name="inperson">
+            <option selected="selected" value="a">甲方</option>
+            <option value="b">乙方</option>
+        </select>
+            转入方:<select name="outperson">
+            <option value="a">甲方</option>
+            <option selected="selected" value="b">乙方 </option>
+        </select>
+            钱：<input type="text" name="money" />
+            <input type="submit" value="提交" />
+        </fieldset>
+    </form>
+    </br>
+    </br>
+    <form id="form2" method="post" action="b" >
+        <fieldset>
+            <legend>乙方->甲方转账</legend>
+            转出方:<select name="inperson">
+            <option value="a">甲方</option>
+            <option selected="selected" value="b">乙方</option>
+        </select>
+            转入方:<select name="outperson">
+            <option selected="selected" value="a">甲方</option>
+            <option value="b">乙方 </option>
+        </select>
+            钱：<input type="text" name="money" />
+            <input type="submit" value="提交" />
+        </fieldset>
+    </form>
