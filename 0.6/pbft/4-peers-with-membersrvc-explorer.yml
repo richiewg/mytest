@@ -46,6 +46,7 @@ services:
       - CORE_SECURITY_ENROLLID=test_vp0
       - CORE_SECURITY_ENROLLSECRET=MwYpmSRjupbT
     ports:
+      - "80:80"
       - "7050:7050"
       - "7051:7051"
     links:
