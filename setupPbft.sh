@@ -23,7 +23,6 @@ docker pull yeasy/hyperledger-fabric:0.6-dp \
   && docker pull yeasy/hyperledger-fabric-peer:0.6-dp \
   && docker pull yeasy/hyperledger-fabric-base:0.6-dp \
   && docker pull yeasy/blockchain-explorer:latest \
-  && docker pull hyperledger/fabric-starter-kit:latest \
   && docker tag yeasy/hyperledger-fabric-peer:0.6-dp hyperledger/fabric-peer \
   && docker tag yeasy/hyperledger-fabric-base:0.6-dp hyperledger/fabric-baseimage \
   && docker tag yeasy/hyperledger-fabric:0.6-dp hyperledger/fabric-membersrvc
