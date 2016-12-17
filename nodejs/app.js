@@ -7,7 +7,8 @@ console.log(" **** starting HFC sample ****");
 var PEER_ADDRESS         = "7051";
 var MEMBERSRVC_ADDRESS   = "7054";
 
-var chain, chaincodeID;
+var chain;
+var chaincodeID = "ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539"
 chain = hfc.newChain("mychain");
 chain.setKeyValStore( hfc.newFileKeyValStore('/tmp/keyValStore') );
 console.log("member services address ="+MEMBERSRVC_ADDRESS);
