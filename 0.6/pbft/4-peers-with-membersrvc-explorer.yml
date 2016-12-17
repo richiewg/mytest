@@ -109,7 +109,7 @@ services:
     stdin_open: true
     tty: true
     ports:
-      - "80:80"
+      - "1337:1337"
 
 #networks:
 #  default:
