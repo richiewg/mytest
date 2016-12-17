@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  nodejs:
+    image: hyperledger/fabric-starter-kit
+    restart: unless-stopped
+    expose:
+      - "80"
