@@ -5,12 +5,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-<div id="div1" style="width: 550px;">
+    <h1>简易区块链转账系统用例测试</h1>
+    <h2>系统环境及情况说明</h2>  
+    本例是构筑在谷歌云服务器端ubantu 16.04的系统上，CPU单核3.75G拟生产环境下4个共识节点（利益节点）的区块链系统。</br>
     </br>
-    </br>
+    页面下方会实时查询出区块中甲乙双方的账本。通过<a href=http://104.199.190.254:9090><b>区块检测系统</b></a>，可以看到区块变化，以及各个节点的情况。 </br></br>    
+    本用例为nodejs开发，通过最通用的rest接口与区块链系统交互。 实际还可通过node.js api,及CLI CMD方式交互方式。
+<div id="div1" style="width: 850px;">
+     </br>
     <form id="form1" method="post" action="b" >
         <fieldset>
-            <legend>甲方->乙方转账</legend>
+            <legend><h3>场景1：甲方->乙方转账</h3></legend>
+        在输入金额并提交后，区块链的智能合约将：</br>
+        1.验证交易的发起方是否为CA(membership-会员管理)成员，当前为内置账户"jim"</br>
+        2.检查交易是否满足智能毁约设定的交易场景</br>
+        3.记录当前交易及交易发起方信息至账本（区块），确保交易可追述，不可抵赖性</br>
+        4.只有交易双方及审计人员可以查询到该交易（通过密钥控制）</br></br>
+
             转出方:<select name="inperson">
             <option selected="selected" value="a">甲方</option>
             <option value="b">乙方</option>
@@ -27,7 +38,8 @@
     </br>
     <form id="form2" method="post" action="b" >
         <fieldset>
-            <legend>乙方->甲方转账</legend>
+            <legend><h3>场景2：乙方->甲方转账</h3></legend>
+            详细处理同上</br></br>
             转出方:<select name="inperson">
             <option value="a">甲方</option>
             <option selected="selected" value="b">乙方</option>
