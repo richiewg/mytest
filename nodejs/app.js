@@ -60,8 +60,8 @@ function onRequest(request,response)
                 var ObjBcu = new bcu();
                 var args = [];
                 args.push("invoke")
-                args.push(jsondata.outperson);
                 args.push(jsondata.inperson);
+                args.push(jsondata.outperson);
                 args.push(jsondata.money);
                 _moneyZ= _moneyJ
                 console.log('moneyj='+ _moneyJ)
