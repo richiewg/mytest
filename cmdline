@@ -3,6 +3,8 @@ peer network login jim
 password = ‘6avZQLwcUe9b’
 peer chaincode deploy -u jim -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -c '{"Function":"init", "Args": ["a","100", "b", "200"]}'
 ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539
+
+
 git clone https://github.com/luodanwg/mytest.git
 git clone https://github.com/creationix/nvm.git
 ./install.sh
@@ -17,3 +19,17 @@ root       532  0.0  1.0 935532 40256 ?        Sl+  Dec18   0:01 node app
 root      1469  0.0  0.0  11128   980 ?        S+   03:21   0:00 grep node
 
 kill 532
+
+ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb907049c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539
+
+# 查看哪些进程打开了指定端口port（对于守护进程必须以root用户执行才能查看到） 
+lsof -i:port 
+
+# 查看哪些进程打开了指定端口port，最后一列是进程ID（此方法对于守护进程作用不大） 
+netstat -nap|grep port 
+
+# 查看端口号对应的系统服务名称 
+cat /etc/services 
+
+# 启动｜停止｜重启系统服务 
+sudo /etc/init.d/service start|stop|restart 

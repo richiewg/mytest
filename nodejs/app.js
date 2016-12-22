@@ -22,8 +22,8 @@ function onRequest(request,response)
         args2.push("a");
         ObjBcu2.chaincode.query(args2, function (err, res2, body) {
             //var jsondataz = JSON.stringify(body.result.message);
-            console.log(JSON.stringify(body));
-            console.log(JSON.stringify(body.result));
+            //console.log(JSON.stringify(body));
+//            console.log(JSON.stringify(body.result));
             _moneyJ =JSON.stringify(body.result.message)
             console.log(_moneyJ)
             var ObjBcu3 = new bcu();

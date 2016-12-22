@@ -47,9 +47,10 @@ function bcu() {
         //logger.debug("option=" + JSON.stringify(option));
         console.log(args);
         client.post("chaincode", option, function (err, res, body) {
+            //console.log(JSON.stringify(body));
+            //console.log(JSON.stringify(body.result));
             cbfunc(err, res, body);
-            var x =JSON.stringify(body);
-            var x =JSON.stringify(body.result);
+
         });
     };
 
