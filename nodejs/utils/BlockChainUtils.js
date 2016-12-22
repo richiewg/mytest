@@ -45,8 +45,11 @@ function bcu() {
         // console.log(option.params.chaincodeID.name +'/n');
         option.id = 5;
         //logger.debug("option=" + JSON.stringify(option));
+        console.log(args);
         client.post("chaincode", option, function (err, res, body) {
             cbfunc(err, res, body);
+            var x =JSON.stringify(body);
+            var x =JSON.stringify(body.result);
         });
     };
 

@@ -8,3 +8,12 @@ git clone https://github.com/creationix/nvm.git
 ./install.sh
 source ./nvm.sh
 nvm install 6.9.2
+luodan.wg@104.199.190.254
+kill 5
+root@vp0:/go/src/github.com/hyperledger/fabric# ps aux |grep node
+root         1  0.0  0.0   4336   752 ?        Ss   Dec18   0:00 sh -c sleep 10; peer node start
+root         6  0.0  1.3 561064 49476 ?        Sl   Dec18   2:56 peer node start
+root       532  0.0  1.0 935532 40256 ?        Sl+  Dec18   0:01 node app
+root      1469  0.0  0.0  11128   980 ?        S+   03:21   0:00 grep node
+
+kill 532

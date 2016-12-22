@@ -21,7 +21,9 @@ function onRequest(request,response)
         args2.push("query");
         args2.push("a");
         ObjBcu2.chaincode.query(args2, function (err, res2, body) {
-            var jsondataz = JSON.stringify(body.result.message);
+            //var jsondataz = JSON.stringify(body.result.message);
+            console.log(JSON.stringify(body));
+            console.log(JSON.stringify(body.result));
             _moneyJ =JSON.stringify(body.result.message)
             console.log(_moneyJ)
             var ObjBcu3 = new bcu();
@@ -29,7 +31,7 @@ function onRequest(request,response)
             args3.push("query");
             args3.push("b");
             ObjBcu3.chaincode.query(args3, function (err, res3, body) {
-                var jsondataz = JSON.stringify(body.result.message);
+                //var jsondataz = JSON.stringify(body.result.message);
                 _moneyY =JSON.stringify(body.result.message)
                 console.log(_moneyY)
                 response.writeHead(200,{"Content-Type":"text/html"});
@@ -81,12 +83,12 @@ function onRequest(request,response)
                         args3.push("b");
                         console.log("222")
                         ObjBcu2.chaincode.query(args2, function (err, res2, body) {
-                            var jsondataz = JSON.stringify(body.result.message);
+                            //var jsondataz = JSON.stringify(body.result.message);
                             _moneyJ =JSON.stringify(body.result.message)
                             console.log("333")                            
                             // console.log(_moneyJ)
                             ObjBcu3.chaincode.query(args3, function (err, res3, body) {
-                                var jsondataz = JSON.stringify(body.result.message);
+                                //var jsondataz = JSON.stringify(body.result.message);
                                 _moneyY =JSON.stringify(body.result.message);
                                 console.log('moneyj='+ _moneyJ)
                                 console.log('moneyz='+ _moneyZ)
@@ -119,7 +121,7 @@ function onRequest(request,response)
                 args2.push("query");
                 args2.push("a");
                 ObjBcu2.chaincode.query(args2, function (err, res2, body) {
-                    var jsondataz = JSON.stringify(body.result.message);
+                    //var jsondataz = JSON.stringify(body.result.message);
                     _moneyJ =JSON.stringify(body.result.message)
                     console.log(_moneyJ)
                     var ObjBcu3 = new bcu();
@@ -127,7 +129,7 @@ function onRequest(request,response)
                     args3.push("query");
                     args3.push("b");
                     ObjBcu3.chaincode.query(args3, function (err, res3, body) {
-                        var jsondataz = JSON.stringify(body.result.message);
+                        //var jsondataz = JSON.stringify(body.result.message);
                         _moneyY =JSON.stringify(body.result.message)
                         console.log(_moneyY)
                         response.writeHead(200,{"Content-Type":"text/html"});
@@ -149,7 +151,7 @@ function querya(){
     args2.push("query");
     args2.push("a");
     ObjBcu2.chaincode.query(args2, function (err, res2, body) {
-        var jsondataz = JSON.stringify(body.result.message);
+        //var jsondataz = JSON.stringify(body.result.message);
         _moneyJ =JSON.stringify(body.result.message);
     });
     console.log('async moneyj'+ _moneyJ)    
@@ -160,7 +162,7 @@ function queryb(){
     args2.push("query");
     args2.push("b");
     ObjBcu2.chaincode.query(args2, function (err, res2, body) {
-        var jsondataz = JSON.stringify(body.result.message);
+        //var jsondataz = JSON.stringify(body.result.message);
         _moneyY =JSON.stringify(body.result.message)
     });
     console.log('async moneyj'+ _moneyY)        
