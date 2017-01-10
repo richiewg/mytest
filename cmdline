@@ -33,3 +33,5 @@ cat /etc/services
 
 # 启动｜停止｜重启系统服务 
 sudo /etc/init.d/service start|stop|restart 
+
+sudo iptables -L -v
