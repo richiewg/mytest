@@ -8,11 +8,10 @@ function getPeerApiUrl() {
 
 function getChainCodeName(inputName) {
     // if (SYSTEM.DevMode) {
-        return inputName;
+    //    return inputName;
     // } else {
         var chainCodeCfghandel = low('./config/chaincodeCfg.json', {storage: storage});
         var res = chainCodeCfghandel.get("ChaincodeID").chain().find({name: inputName}).value()
-        console.log('###### RES'+ res +'/n')
         if (res) {
             return res.hash
         } else {
