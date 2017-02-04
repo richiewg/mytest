@@ -5,11 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
+    <h3>场景介绍：输入征信ID，持有的身份证数据及该征信节点的服务器地址，可以在区块链上登录该摘要。</h3>
+    <h3>测试方法：1.征信节点ID为7位的数字（7位以外不能处理）</h3>
+        <h3>2.因为本DEMO的数据库节点只提供了以下身份证信息，所以目前只能通过以下数据测试</h3>
+        <h3>111111111111111111</h3>
+        <h3>222222222222222222</h3>
+        <h3>333333333333333333</h3>
+        <h3>3.测试数据服务器地址为127.0.0.1/login</h3>
     <form id="form2" method="post" action="regist" >
-            商户ID：<input type="text" name="Shanghu" />
+            征信节点ID：<input type="text" name="Shanghu" />
             身份证：<input type="text" name="Identity" />			
             服务器地址：<input type="text" name="ServerAddress" />
             <input type="submit" value="提交" />
-        </fieldset>
     </form>	
 </body>
