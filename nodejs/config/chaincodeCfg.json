@@ -1,14 +1,14 @@
 {
   "peers": [
     {
-      "host": "127.0.0.1",
+      "host": "104.199.210.10",
       "APIPort": 7050
     }
   ],
   "ChaincodeID": [
     {
       "name": "test01",
-      "hash": "ee5b24a1f17c356dd5f6e37307922e39ddba12e5d2e203ed93401d7d05eb0dd194fb9070549c5dc31eb63f4e654dbd5a1d86cbb30c48e3ab1812590cd0f78539"
+      "hash": "6cf872c3d64153d31155adf962b51e0e9397f46428db7cb4fe9225d7733cfdd1fe6d3e40875e99bcfc2d4631a7dd38f5351d50cfb07c24fb3430ee789a4e4acf"
     }
   ]
 }
