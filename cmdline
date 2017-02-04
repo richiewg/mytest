@@ -35,3 +35,23 @@ cat /etc/services
 sudo /etc/init.d/service start|stop|restart 
 
 sudo iptables -L -v
+
+e1344e8974ecfd013a73a2681bc83b64c8b075dd732d304459923d2de2e7114e7ea9893cce858a0b59c536deac36f3baf580e3ebe31c843c3865f578e2051fa0
+
+cd /opt/gopath/src/github.com/hyperledger/fabric/peer
+
+git clone https://github.com/richiewg/mytest.git
+
+cp test /opt/gopath/src/github.com/hyperledger/fabric/examples/chaincode/go/ -r
+
+peer chaincode deploy -u jim -p github.com/hyperledger/fabric/examples/chaincode/go/test -c '{"Function":"init", "Args":["111111111111111111","0000001","127.0.0.1:4000/login"]}'
+
+git clone https://github.com/richiewg/middleWebserver.git
+
+docker exec -it pbft_vp0_1 bash
+
+‘/root/middleWebserver/webserver’
+
+127.0.0.1:4000/login
+
+104.199.210.10/login
