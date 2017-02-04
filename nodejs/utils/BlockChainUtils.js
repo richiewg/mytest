@@ -12,7 +12,7 @@ function bcu() {
         params: {
             type: 1,
             chaincodeID: {
-                name: cccfg.getChainCodeName("test01")
+                name: cccfg.getChainCodeName("6cf872c3d64153d31155adf962b51e0e9397f46428db7cb4fe9225d7733cfdd1fe6d3e40875e99bcfc2d4631a7dd38f5351d50cfb07c24fb3430ee789a4e4acf")
             },
             ctorMsg: {
                 args: [" "]
@@ -27,7 +27,7 @@ function bcu() {
     this.chaincode.deploy = function (args, cbfunc) {
         option.method = "deploy";
         option.params.ctorMsg.args = args;
-        option.params.chaincodeID.name = 'test01';
+        option.params.chaincodeID.name = '6cf872c3d64153d31155adf962b51e0e9397f46428db7cb4fe9225d7733cfdd1fe6d3e40875e99bcfc2d4631a7dd38f5351d50cfb07c24fb3430ee789a4e4acf';
         option.id = 1;
         client.post("chaincode", option, function (err, res, body) {
             cbfunc(err, res, body);
@@ -36,7 +36,7 @@ function bcu() {
     this.chaincode.invoke = function (args, cbfunc) {
         option.method = "invoke";
         option.params.ctorMsg.args = args;
-        option.params.chaincodeID.name = 'test01';
+        option.params.chaincodeID.name = '6cf872c3d64153d31155adf962b51e0e9397f46428db7cb4fe9225d7733cfdd1fe6d3e40875e99bcfc2d4631a7dd38f5351d50cfb07c24fb3430ee789a4e4acf';
         option.id = 3;
         client.post("chaincode", option, function (err, res, body) {
             cbfunc(err, res, body);
@@ -45,7 +45,7 @@ function bcu() {
     this.chaincode.query = function (args, cbfunc) {
         option.method = "query";
         option.params.ctorMsg.args = args;
-        option.params.chaincodeID.name = 'test01';
+        option.params.chaincodeID.name = '6cf872c3d64153d31155adf962b51e0e9397f46428db7cb4fe9225d7733cfdd1fe6d3e40875e99bcfc2d4631a7dd38f5351d50cfb07c24fb3430ee789a4e4acf';
         option.id = 5;
         console.log(args);
         client.post("chaincode", option, function (err, res, body) {
