@@ -17,8 +17,8 @@ function bcu() {
             ctorMsg: {
                 args: [" "]
 			}
-            //},
-            //secureContext: "jim"
+            },
+            secureContext: "jim"
         },
         id: 3
     }
