@@ -5,50 +5,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-    <h1>简易区块链转账系统用例测试</h1>
-    <h2>系统环境及情况说明</h2>  
-    本例是构筑在谷歌云端ubantu 16.04系统上，CPU单核3.75G拟生产环境4个共识(利益)节点基于PBFT共识算法的区块链系统。</br>
-    </br>
-    页面下方会实时查询出区块中甲乙双方的账本。另外，通过<a href=http://104.199.210.10:9090><b>区块检测系统</b></a>可以看到区块变化，以及各个节点的情况。 </br></br>    
-    本用例为nodejs开发，通过最通用的rest接口与区块链系统交互。 实际还可通过node.js api,及CLI CMD方式交互方式。
-<div id="div1" style="width: 880px;">
-     </br>
-    <form id="form1" method="post" action="b" >
-        <fieldset>
-            <legend><h3>场景1：甲方->乙方转账</h3></legend>
-        在输入金额并提交后，区块链的智能合约将：</br>
-        1.验证交易的发起方是否为CA(membership-会员管理)成员，当前为内置账户"jim"</br>
-        2.检查交易是否满足智能合约设定的交易场景</br>
-        3.记录当前交易及交易发起方信息至账本（区块），确保交易可追述，不可抵赖性</br>
-        4.只有交易双方及审计人员可以查询到该交易（通过密钥控制）</br></br>
+    <h1>简易区块链系统用例测试</h1>
+    <h3>系统环境及情况说明</h3>  
+     本例是构筑在谷歌云端ubantu 16.04系统上，CPU单核3.75G内存拟生产环境4个共识节点基于PBFT共识算法的区块链系统。</br>
+	<h3>区块链浏览器</h3>
+	通过<a href=http://104.199.210.10:9090><b>区块检测系统</b></a>可以看到区块变化，以及各个节点的情况。 </br>
+	<hr />
+	<h3>简易测试demo</h3>
+	<dl>
+	<dt><a href=http://127.0.0.1:3000/b><b>1.摘要登记</b></a></dt>
+	<dd>在登记页面，可以登记该节点所持有的征信摘要数据（身份证）,并在区块链做留存</br></br></dd>
+	<dt><a href=http://127.0.0.1:3000/c><b>2.删除摘要</b></a></dt>
+	<dd>商户可以删除所登记的摘要信息</br></br></dd>	
+	<dt><a href=http://127.0.0.1:3000/RegistdQuery><b>3.查询登记摘要的所有节点</b></dt></a>
+	<dd>在查询页面，输入摘要数据（身份证）以后，区块链系统会查询登记摘要的所有节点。</br></dd>
+	<dt><a href=http://127.0.0.1:3000/a><b>4.征信查询</b></dt></a>
+	<dd>在查询页面，输入摘要数据（身份证）以后，区块链系统首先会查找本地登记的摘要信息，向所登记的节点做查询，并将所有查询到的结果返回至查询页面。区块链端会留存查询记录，但并不会留存查询所得的内容。</br></dd>
 
-            转出方:<select name="inperson">
-            <option selected="selected" value="a">甲方</option>
-            <option value="b">乙方</option>
-        </select>
-            转入方:<select name="outperson">
-            <option value="a">甲方</option>
-            <option selected="selected" value="b">乙方 </option>
-        </select>
-            钱：<input type="text" name="money" />
-            <input type="submit" value="提交" />
-        </fieldset>
-    </form>
-    </br>
-    </br>
-    <form id="form2" method="post" action="b" >
-        <fieldset>
-            <legend><h3>场景2：乙方->甲方转账</h3></legend>
-            详细处理同上</br></br>
-            转出方:<select name="inperson">
-            <option value="a">甲方</option>
-            <option selected="selected" value="b">乙方</option>
-        </select>
-            转入方:<select name="outperson">
-            <option selected="selected" value="a">甲方</option>
-            <option value="b">乙方 </option>
-        </select>
-            钱：<input type="text" name="money" />
-            <input type="submit" value="提交" />
-        </fieldset>
-    </form>
+	</dl>
+</body>
