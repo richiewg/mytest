@@ -55,3 +55,7 @@ docker exec -it pbft_vp0_1 bash
 127.0.0.1:4000/login
 
 104.199.210.10/login
+
+[miyan@xyjk1002 ~]$ chmod +x /usr/local/bin/docker-compose 
+[miyan@xyjk1002 ~]$ ll /usr/local/bin/docker-compose 
+-rwxrwxr-x 1 miyan miyan 7960068 Apr 13 08:18 /usr/local/bin/docker-compose
