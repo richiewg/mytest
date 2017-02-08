@@ -1,0 +1,28 @@
+# This compose file will start 4 hyperledger peer nodes + 1 CA node.
+# We add a delay to start the VP nodes after CA node:
+# command: sh -c "sleep 5; peer node start"
+#
+#  vp0: validating node as root
+#  vp1: validating node as peer
+#  vp2: validating node as peer
+#  vp3: validating node as peer
+# https://github.com/yeasy/docker-compose-files
+
+version: '2'
+
+  vp2:
+    extends:
+      file: peer.yml
+      service: vp_sec
+    hostname: vp2
+    environment:
+      - CORE_PEER_ID=vp2
+      - CORE_PEER_DISCOVERY_ROOTNODE=116.62.38.164:7051
+      - CORE_SECURITY_ENROLLID=test_vp2
+      - CORE_SECURITY_ENROLLSECRET=vQelbRvja7cJ
+    ports:
+      - "7050:7050"
+      - "7051:7051"
+    links:
+      - 116.62.38.164:7051
+    command: sh -c "sleep 10; peer node start"
