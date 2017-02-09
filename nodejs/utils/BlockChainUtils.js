@@ -12,7 +12,7 @@ function bcu() {
         params: {
             type: 1,
             chaincodeID: {
-                name: cccfg.getChainCodeName("e1344e8974ecfd013a73a2681bc83b64c8b075dd732d304459923d2de2e7114e7ea9893cce858a0b59c536deac36f3baf580e3ebe31c843c3865f578e2051fa0")
+                name: cccfg.getChainCodeName("8e5158e500344e11c818a15f54d3b7a6bcd06e8a746cacffa712e70824a497588ada2e3bacf76af5b66dd00ebcac6aa08e8d7236193e64d5679e3cd06e5b287b")
             },
             ctorMsg: {
                 args: [" "]
@@ -27,7 +27,7 @@ function bcu() {
     this.chaincode.deploy = function (args, cbfunc) {
         option.method = "deploy";
         option.params.ctorMsg.args = args;
-        option.params.chaincodeID.name = 'e1344e8974ecfd013a73a2681bc83b64c8b075dd732d304459923d2de2e7114e7ea9893cce858a0b59c536deac36f3baf580e3ebe31c843c3865f578e2051fa0';
+        option.params.chaincodeID.name = '8e5158e500344e11c818a15f54d3b7a6bcd06e8a746cacffa712e70824a497588ada2e3bacf76af5b66dd00ebcac6aa08e8d7236193e64d5679e3cd06e5b287b';
         option.id = 1;
         client.post("chaincode", option, function (err, res, body) {
             cbfunc(err, res, body);
@@ -36,7 +36,7 @@ function bcu() {
     this.chaincode.invoke = function (args, cbfunc) {
         option.method = "invoke";
         option.params.ctorMsg.args = args;
-        option.params.chaincodeID.name = 'e1344e8974ecfd013a73a2681bc83b64c8b075dd732d304459923d2de2e7114e7ea9893cce858a0b59c536deac36f3baf580e3ebe31c843c3865f578e2051fa0';
+        option.params.chaincodeID.name = '8e5158e500344e11c818a15f54d3b7a6bcd06e8a746cacffa712e70824a497588ada2e3bacf76af5b66dd00ebcac6aa08e8d7236193e64d5679e3cd06e5b287b';
         option.id = 3;
         client.post("chaincode", option, function (err, res, body) {
             cbfunc(err, res, body);
@@ -45,7 +45,7 @@ function bcu() {
     this.chaincode.query = function (args, cbfunc) {
         option.method = "query";
         option.params.ctorMsg.args = args;
-        option.params.chaincodeID.name = 'e1344e8974ecfd013a73a2681bc83b64c8b075dd732d304459923d2de2e7114e7ea9893cce858a0b59c536deac36f3baf580e3ebe31c843c3865f578e2051fa0';
+        option.params.chaincodeID.name = '8e5158e500344e11c818a15f54d3b7a6bcd06e8a746cacffa712e70824a497588ada2e3bacf76af5b66dd00ebcac6aa08e8d7236193e64d5679e3cd06e5b287b';
         option.id = 5;
         console.log(args);
         client.post("chaincode", option, function (err, res, body) {
