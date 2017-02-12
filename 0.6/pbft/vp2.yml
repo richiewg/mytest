@@ -9,7 +9,7 @@
 # https://github.com/yeasy/docker-compose-files
 
 version: '2'
-
+services:
   vp2:
     extends:
       file: peer.yml
