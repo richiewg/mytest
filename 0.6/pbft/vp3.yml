@@ -18,7 +18,7 @@ services:
       service: explorer
     hostname: explorer
     environment:
-      - HYP_REST_ENDPOINT=http://116.62.38.164:7050
+      - HYP_REST_ENDPOINT=http://192.168.100.10:7050
     ports:
       - "9090:9090"
       
@@ -29,7 +29,7 @@ services:
     hostname: vp3
     environment:
       - CORE_PEER_ID=vp3
-      - CORE_PEER_DISCOVERY_ROOTNODE=116.62.38.164:7051
+      - CORE_PEER_DISCOVERY_ROOTNODE=192.168.100.10:7051
       - CORE_SECURITY_ENROLLID=test_vp3
       - CORE_SECURITY_ENROLLSECRET=9LKqKH5peurL
     ports:
@@ -37,4 +37,5 @@ services:
       - "7051:7051"
     links:
       - 192.168.100.10:7051
+      - 192.168.100.10:7054
     command: sh -c "sleep 10; peer node start"
