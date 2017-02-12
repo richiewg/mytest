@@ -17,7 +17,7 @@ version: '2'
     hostname: vp2
     environment:
       - CORE_PEER_ID=vp2
-      - CORE_PEER_DISCOVERY_ROOTNODE=116.62.38.164:7051
+      - CORE_PEER_DISCOVERY_ROOTNODE=192.168.100.10:7051
       - CORE_SECURITY_ENROLLID=test_vp2
       - CORE_SECURITY_ENROLLSECRET=vQelbRvja7cJ
     ports:
@@ -25,4 +25,5 @@ version: '2'
       - "7051:7051"
     links:
       - 192.168.100.10:7051
+      - 192.168.100.10:7054
     command: sh -c "sleep 10; peer node start"
