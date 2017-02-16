@@ -17,13 +17,13 @@ services:
     hostname: vp1
     environment:
       - CORE_PEER_ID=vp1
-      - CORE_PEER_DISCOVERY_ROOTNODE=192.168.100.10:7051
+      - CORE_PEER_DISCOVERY_ROOTNODE=116.62.38.164:7051
       - CORE_SECURITY_ENROLLID=test_vp1
       - CORE_SECURITY_ENROLLSECRET=5wgHK9qqYaPy
     ports:
       - "7050:7050"
       - "7051:7051"
-    links:
-      - 192.168.100.10:7051
-      - 192.168.100.10:7054
+    external_links:
+      - vp0
+      - membersrvc
     command: sh -c "sleep 10; peer node start"
