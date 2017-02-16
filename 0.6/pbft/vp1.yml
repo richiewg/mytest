@@ -17,7 +17,7 @@ services:
     hostname: vp1
     environment:
       - CORE_PEER_ID=vp1
-      - CORE_PEER_DISCOVERY_ROOTNODE=116.62.38.164:7051
+      - CORE_PEER_DISCOVERY_ROOTNODE=vp0:7051
       - CORE_SECURITY_ENROLLID=test_vp1
       - CORE_SECURITY_ENROLLSECRET=5wgHK9qqYaPy
     ports:
