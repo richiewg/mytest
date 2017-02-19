@@ -9,7 +9,6 @@
 # https://github.com/yeasy/docker-compose-files
 
 version: '2'
-
 services:
   # blockchain-explorer
   explorer:
@@ -18,26 +17,25 @@ services:
       service: explorer
     hostname: explorer
     environment:
-      - HYP_REST_ENDPOINT=http://vp0:7050
+      - HYP_REST_ENDPOINT=http://116.62.38.164:7050
     ports:
       - "9090:9090"
-    external_links:
-      - vp0
-      
+
   vp3:
     extends:
       file: peer.yml
       service: vp_sec
     hostname: vp3
     environment:
+      - CORE_VALIDATOR_EVENTS_ADDRESS=101.37.19.115:7053
       - CORE_PEER_ID=vp3
-      - CORE_PEER_DISCOVERY_ROOTNODE=vp0:7051
+      - CORE_PEER_ADDRESSAUTODETECT=false
+      - CORE_PEER_ADDRESS=101.37.19.115:7051
+      - CORE_PEER_DISCOVERY_ROOTNODE=116.62.38.164:7051
       - CORE_SECURITY_ENROLLID=test_vp3
       - CORE_SECURITY_ENROLLSECRET=9LKqKH5peurL
     ports:
       - "7050:7050"
       - "7051:7051"
-    external_links:
-      - vp0
-      - membersrvc
     command: sh -c "sleep 10; peer node start"
+
