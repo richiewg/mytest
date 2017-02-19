@@ -31,7 +31,10 @@ services:
       service: vp_sec
     hostname: vp0
     environment:
+      - CORE_VALIDATOR_EVENTS_ADDRESS=116.62.38.164:7053
       - CORE_PEER_ID=vp0
+      - CORE_PEER_ADDRESSAUTODETECT=false
+      - CORE_PEER_ADDRESS=116.62.38.164:7051
       - CORE_SECURITY_ENROLLID=test_vp0
       - CORE_SECURITY_ENROLLSECRET=MwYpmSRjupbT
     ports:
