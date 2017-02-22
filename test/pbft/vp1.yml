@@ -9,17 +9,18 @@
 # https://github.com/yeasy/docker-compose-files
 
 version: '2'
-
+services:
   vp1:
     extends:
       file: peer.yml
       service: vp_sec
     hostname: vp1
     environment:
+      - CORE_VALIDATOR_EVENTS_ADDRESS=192.168.33.13:7053
       - CORE_PEER_ID=vp1
       - CORE_PEER_ADDRESSAUTODETECT=false
-      - CORE_PEER_ID=35.185.129.161:7051
-      - CORE_PEER_DISCOVERY_ROOTNODE=35.185.136.250:7051
+      - CORE_PEER_ADDRESS=192.168.33.13:7051
+      - CORE_PEER_DISCOVERY_ROOTNODE=192.168.33.11:7051
       - CORE_SECURITY_ENROLLID=test_vp1
       - CORE_SECURITY_ENROLLSECRET=5wgHK9qqYaPy
     ports:
