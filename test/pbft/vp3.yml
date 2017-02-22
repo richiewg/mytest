@@ -18,20 +18,21 @@ services:
       service: explorer
     hostname: explorer
     environment:
-      - HYP_REST_ENDPOINT=http://35.185.136.250:7050
+      - HYP_REST_ENDPOINT=http://192.168.33.11:7050
     ports:
       - "9090:9090"
-      
+
   vp3:
     extends:
       file: peer.yml
       service: vp_sec
     hostname: vp3
     environment:
+      - CORE_VALIDATOR_EVENTS_ADDRESS=192.168.33.15:7053
       - CORE_PEER_ID=vp3
       - CORE_PEER_ADDRESSAUTODETECT=false
-      - CORE_PEER_ADDRESS=104.199.205.51:7051
-      - CORE_PEER_DISCOVERY_ROOTNODE=35.185.136.250:7051
+      - CORE_PEER_ADDRESS=192.168.33.15:7051
+      - CORE_PEER_DISCOVERY_ROOTNODE=192.168.33.11:7051
       - CORE_SECURITY_ENROLLID=test_vp3
       - CORE_SECURITY_ENROLLSECRET=9LKqKH5peurL
     ports:
